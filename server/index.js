@@ -5,7 +5,8 @@ const fs = require("fs");
 const vision = require("@google-cloud/vision");
 const pdfParse = require("pdf-parse");
 const db = require("./firebase");
-import admin from "firebase-admin";
+// import admin from "firebase-admin";
+const admin = require("firebase-admin");
 
 admin.initializeApp({
   credential: admin.credential.cert({
@@ -31,7 +32,7 @@ const invoiceUpload = multer({ dest: "invoices/" });
 const client = new vision.ImageAnnotatorClient({
   keyFilename: "key.json",
 });
-
+// const client = new vision.ImageAnnotatorClient();
 async function runOCR(path) {
   const [result] = await client.textDetection(path);
   return result.textAnnotations[0]?.description || "";
@@ -232,6 +233,8 @@ app.get("/report/:id", async (req, res) => {
 });
 /* ================= SERVER ================= */
 
-app.listen(5000, () =>
-  console.log("🚀 Server running on 5000")
-);
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on ${PORT}`);
+});

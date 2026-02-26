@@ -58,7 +58,10 @@ export default function Upload() {
     formData.append("uploadTime", new Date().toISOString());
 
     try {
-      const res = await axios.post("http://localhost:5000/upload", formData);
+      const res = await axios.post(
+  "https://fuelai-backend.onrender.com/upload",
+  formData
+);
       setUserId(res.data.userId);
       alert("Upload Successful!");
     } catch (err) {
