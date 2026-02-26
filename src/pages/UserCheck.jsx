@@ -9,7 +9,7 @@ export default function UserCheck() {
   const checkInvoice = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`https://fuelai-backend.onrender.com/user/${id}`);
+      const res = await axios.get(`http://localhost:5000/user/${id}`);
       setData(res.data);
     } catch (err) {
       alert("Verification ID not found in system.");
@@ -243,7 +243,7 @@ export default function UserCheck() {
                 </div>
 
                 <a
-                  href={`https://fuelai-backend.onrender.com${data.invoiceUrl}`}
+                  href={`http://localhost:5000${data.invoiceUrl}`}
                   target="_blank"
                   rel="noreferrer"
                   className="btn-download"
