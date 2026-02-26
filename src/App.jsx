@@ -1,26 +1,32 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import Upload from "./pages/Upload";
-import Admin from "./pages/Admin";
-import UserCheck from "./pages/UserCheck";
+function Upload() {
+  const navigate = useNavigate();
 
-function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <div style={{ padding: "20px" }}>
+      {/* --- Navigation Buttons --- */}
+      <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+        <button 
+          onClick={() => navigate("/admin")} 
+          style={{ padding: "10px", cursor: "pointer", background: "#007bff", color: "white", border: "none", borderRadius: "5px" }}
+        >
+          Go to Admin Dashboard
+        </button>
+        <button 
+          onClick={() => navigate("/check")} 
+          style={{ padding: "10px", cursor: "pointer", background: "#28a745", color: "white", border: "none", borderRadius: "5px" }}
+        >
+          Check Invoice Status
+        </button>
+      </div>
 
-        {/* USER UPLOAD PAGE */}
-        <Route path="/" element={<Upload />} />
-
-        {/* ADMIN DASHBOARD */}
-        <Route path="/admin" element={<Admin />} />
-
-        {/* USER CHECK INVOICE */}
-        <Route path="/check" element={<UserCheck />} />
-
-      </Routes>
-    </BrowserRouter>
+      <hr />
+      
+      <h1>Upload Fuel Records</h1>
+      {/* Aapka baaki upload form ka code yahan aayega */}
+    </div>
   );
 }
 
-export default App;
+export default Upload;
