@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0b0f1a;
+  color: #e6f1ff;
+}
+
+/* center layout */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* neon card */
+.card {
+  background: #121a2b;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(0, 207, 255, 0.15);
+  margin-bottom: 20px;
+}
+
+/* title */
+.title {
+  text-align: center;
+  color: #00cfff;
+  margin-bottom: 30px;
+}
+
+/* inputs */
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  background: #0b0f1a;
+  border: 1px solid #00cfff;
+  border-radius: 8px;
+  color: white;
+}
+
+/* buttons */
+.btn {
+  background: #00cfff;
+  border: none;
+  padding: 12px 20px;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px #00cfff;
+  transform: translateY(-2px);
+}
+
+/* admin record */
+.record {
+  border-left: 4px solid #00cfff;
+  margin-top: 15px;
+  padding: 15px;
+  background: #0f1626;
+  border-radius: 8px;
+}
+
+/* navigation button */
+.nav-btn {
+  margin-bottom: 20px;
+}
