@@ -7,7 +7,7 @@ export default function Admin() {
   /* ================= FETCH DATA ================= */
   const loadData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/admin");
+      const res = await axios.get("https://fuelai-backend.onrender.com/admin");
       setRecords(res.data);
     } catch (err) {
       console.error("Failed to load records");
@@ -26,7 +26,7 @@ export default function Admin() {
     formData.append("invoice", file);
 
     try {
-      await axios.post(`http://localhost:5000/upload-invoice/${id}`, formData);
+      await axios.post(`https://fuelai-backend.onrender.com/upload-invoice/${id}`, formData);
       alert("✅ Invoice successfully linked to User " + id);
       loadData(); 
     } catch (err) {
@@ -260,7 +260,7 @@ export default function Admin() {
               </div>
 
               <a
-                href={`http://localhost:5000/report/${r.id}`}
+                href={`https://fuelai-backend.onrender.com/report/${r.id}`}
                 target="_blank"
                 rel="noreferrer"
                 className="btn-download"
